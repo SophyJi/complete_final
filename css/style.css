@@ -1,5 +1,6 @@
-body{
-    background-color: bisque;
+
+body {
+    background-image: url("../images/bg.jpg");
 }
 
 h1 {
@@ -328,4 +329,11 @@ li:hover {
 
 .arrow:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.icon{
+    border: 5px solid rgb(205, 117, 245); 
+    padding: 10px;
+    border-radius: 300px;
+    margin-left: 20px;
 }
