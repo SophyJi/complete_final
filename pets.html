@@ -256,8 +256,24 @@
                 <span class="arrow right" onclick="nextImage()" onkeypress="nextImage()" tabindex="0" role="button">&#10095;</span> <!-- Right arrow -->
                 <div id="caption"></div>
             </div>
-
+            <form id="petUploadForm">
+                <div class="form-step" id="step1">
+                    <p> Want to show your pets on the page? Leave your information here and connect linxuanj@umich.edu</p>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="button" onclick="nextStep()">Next</button>
+                    </div>
+                    <div class="form-step" id="step2" style="display:none;">
+                        <label for="petImage">Upload Your Pet's Photo:</label>
+                        <input type="file" id="petImage" name="petImage" accept="image/*" aria-label="choose photo">
+                        <button type="submit" aria-label="Submit pet's photo">Upload Pet Photo</button>
+                    </div>
+                </form>
+            <div id="imageDisplayArea"></div> 
         </div>
+        <script src = "js/form.js"></script>
         <script src="js/lightbox.js"></script>
         <div>
             <img src = "images/sophy.jpg" width = 300 alt = "Sophy's Icon" class = "icon">

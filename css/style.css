@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Noto Sans', sans-serif;
     background-image: url("../images/bg.jpg");
@@ -366,3 +365,48 @@ li:hover {
     border-radius: 300px;
     margin-left: 20px;
 }
+
+.video-container {
+    margin: 20px 0;
+    text-align: center; 
+}
+
+.form-step {
+    margin: 20px;
+    padding: 20px;
+    border: 5px solid plum;
+}
+
+input[type=text], input[type=email], input[type=file] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: white; /* Set the background color to white */
+}
+
+button {
+    background-color: #09600c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#imageDisplayArea img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+#imageDisplayArea img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
