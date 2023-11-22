@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap" rel="stylesheet">
+
     <title>Travels</title>
 </head>
 <body>
     <a href = "#main" id = "Skip"> Skip to Main Content</a> 
     <nav>
         <ul class="navigation" id="nav">
-          <li><a href="index.html" class = "active">Home/Travels</a></li>
+          <li><a href="index.html" class = "active">Home/Travels </a></li>
           <li><a href="pets.html">Pets</a></li>
           <li><a href="recipes.html">Recipes</a></li>
         </ul>
@@ -132,66 +136,7 @@
                 <div id="caption"></div>
             </div>
 
-           
-          
-<script src="js/travel.reduce.js"></script>
-<script type="text/javascript">  
-    // Correct the selector to target elements with class 'lb'
-    var images = document.querySelectorAll('.lb');
-    var currentIndex = 0; 
-
-    // Function to open the lightbox
-    function openLightbox(imgElement) {
-        var src = imgElement.getAttribute('src'); // Get the source of the image
-        var alt = imgElement.getAttribute('alt'); // Get the alt text of the image
-        document.getElementById('lightboxModal').style.display = 'block';
-        document.getElementById('lightboxImage').setAttribute('src', src);
-        document.getElementById('caption').innerText = alt;
-
-        // Add the animation class if the window width is greater than or equal to 710px
-        if (window.innerWidth >= 710) {
-            document.getElementById('lightboxImage').classList.add('lightbox-zoom-animation');
-        }
-
-        // Update currentIndex to the index of the clicked image
-        currentIndex = Array.from(images).indexOf(imgElement);
-    }
-
-    // Function to close the lightbox
-    function closeLightbox() {
-        document.getElementById('lightboxModal').style.display = 'none';
-        document.getElementById('lightboxImage').classList.remove('lightbox-zoom-animation');
-    }
-
-    function nextImage() {
-        if (currentIndex < images.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Loop back to the first image
-        }
-        openLightbox(images[currentIndex]);
-    }
-
-    function previousImage() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = images.length - 1; // Loop back to the last image
-        }
-        openLightbox(images[currentIndex]);
-    }
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowRight') {
-            nextImage();
-        } else if (e.key === 'ArrowLeft') {
-            previousImage();
-        }
-    });
-
-
-</script>
-
+        <script src="js/lightbox.js"></script>
         </div>
         <div>
             <img src = "images/sophy.jpg" width = 300 alt = "Sophy's Icon" class = "icon">
