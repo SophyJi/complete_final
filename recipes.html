@@ -57,7 +57,7 @@
             </ol>
             <div class="pgre">
                 <img src="images/pasta_cooking.jpg" class= 'lb' alt ="Pasta being lifted by a fork in a pot of boiling water. It is almost finished cooking." width = "200"  onclick="openLightbox(this)" onkeypress="openLightbox(this)" tabindex="0" role="button">
-                <img src="images/shrimp_scampi_cooking.jpg"class= 'lb'  alt ="Shrimp cooking in a sauce of butter and wine. It is being stirred with a spoon."  width = "200"  onclick="openLightbox(this)" onkeypress="openLightbox(this)" tabindex="0" role="button">
+                <img src="images/shrimp_scampi_cooking.jpg" class= 'lb'  alt ="Shrimp cooking in a sauce of butter and wine. It is being stirred with a spoon."  width = "200"  onclick="openLightbox(this)" onkeypress="openLightbox(this)" tabindex="0" role="button">
                 <img src="images/shrimp_cooking.jpg" class= 'lb' alt ="Shrimp is cooking until it is pink. Shrimp is almost finished cooking."   width = "200"  onclick="openLightbox(this)" onkeypress="openLightbox(this)" tabindex="0" role="button">
             </div>
         </div>
@@ -104,7 +104,7 @@
             <div class="pgre">
             <img src="images/Cookies-on-tray.jpeg" class= 'lb' width="200" alt="Close up of matcha cookies on baking tray"  onclick="openLightbox(this)" onkeypress="openLightbox(this)" tabindex="0" role="button">
             <img src="images/Matcha-and-flour.jpeg" class= 'lb' width="200" alt="Matcha and flour sifted into a bowl"  onclick="openLightbox(this)" onkeypress="openLightbox(this)" tabindex="0" role="button">
-            <img src="images/cookie-dough.jpeg"class= 'lb'  width="200" alt="Raw matcha cookie dough shaped into a cylinder"  onclick="openLightbox(this)" onkeypress="openLightbox(this)" tabindex="0" role="button">
+            <img src="images/cookie-dough.jpeg" class= 'lb'  width="200" alt="Raw matcha cookie dough shaped into a cylinder"  onclick="openLightbox(this)" onkeypress="openLightbox(this)" tabindex="0" role="button">
             </div>
             <!-- Emily Ma -->
     
@@ -144,69 +144,16 @@
             <div id="lightboxModal" class="lightbox">
                 <span class="close" onclick="closeLightbox()" onkeypress="closeLightbox()" tabindex="0" role="button">&times;</span>
                 <span class="arrow left" onclick="previousImage()" onkeypress="previousImage()" tabindex="0" role="button">&#10094;</span> <!-- Left arrow -->
-                <img class="lightbox-content" id="lightboxImage" alt = "">
+                <img class="lightbox-content" id="lightboxImage" alt = "" src = ""> 
                 <span class="arrow right" onclick="nextImage()" onkeypress="nextImage()" tabindex="0" role="button">&#10095;</span> <!-- Right arrow -->
                 <div id="caption"></div>
             </div>
 
-            <script type="text/javascript">  
-                // Correct the selector to target elements with class 'lb'
-                var images = document.querySelectorAll('.lb');
-                var currentIndex = 0; 
-            
-                // Function to open the lightbox
-                function openLightbox(imgElement) {
-                    var src = imgElement.getAttribute('src'); // Get the source of the image
-                    var alt = imgElement.getAttribute('alt'); // Get the alt text of the image
-                    document.getElementById('lightboxModal').style.display = 'block';
-                    document.getElementById('lightboxImage').setAttribute('src', src);
-                    document.getElementById('caption').innerText = alt;
-            
-                    // Add the animation class if the window width is greater than or equal to 710px
-                    if (window.innerWidth >= 710) {
-                        document.getElementById('lightboxImage').classList.add('lightbox-zoom-animation');
-                    }
-            
-                    // Update currentIndex to the index of the clicked image
-                    currentIndex = Array.from(images).indexOf(imgElement);
-                }
-            
-                // Function to close the lightbox
-                function closeLightbox() {
-                    document.getElementById('lightboxModal').style.display = 'none';
-                    document.getElementById('lightboxImage').classList.remove('lightbox-zoom-animation');
-                }
-            
-                function nextImage() {
-                    if (currentIndex < images.length - 1) {
-                        currentIndex++;
-                    } else {
-                        currentIndex = 0; // Loop back to the first image
-                    }
-                    openLightbox(images[currentIndex]);
-                }
-            
-                function previousImage() {
-                    if (currentIndex > 0) {
-                        currentIndex--;
-                    } else {
-                        currentIndex = images.length - 1; // Loop back to the last image
-                    }
-                    openLightbox(images[currentIndex]);
-                }
-            
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'ArrowRight') {
-                        nextImage();
-                    } else if (e.key === 'ArrowLeft') {
-                        previousImage();
-                    }
-                });
-            </script>
+            <script src="js/lightbox.js"></script>
         </div>
         <div>
             <img src = "images/sophy.jpg" width = 300 alt = "Sophy's Icon" class = "icon">
-            <br> Linxuan Ji</br>
+            <br> Linxuan Ji
         </div>
     </main>
 
